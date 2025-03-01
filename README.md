@@ -1,4 +1,54 @@
-# <p align="center">🚀 NextJS AI Assistant – Conversational AI</p>
+# Next.js AI Assistant
+
+A chat application built with Next.js that interacts with an AI assistant backend. The application supports Markdown rendering, syntax highlighting, and session management for maintaining conversation history.
+
+---
+
+## Features
+
+- **Real-time Chat**: Send and receive messages in real-time.
+- **Markdown Support**: Messages are rendered with Markdown formatting.
+- **Syntax Highlighting**: Code blocks in messages are highlighted using `react-syntax-highlighter`.
+- **Session Management**: Maintains conversation history using a session ID.
+- **Loading State**: Displays a loading indicator while waiting for AI responses.
+- **Responsive Design**: Works seamlessly on both desktop and mobile devices.
+
+---
+
+## Technologies Used
+
+- **Frontend**:
+  - [Next.js](https://nextjs.org/) (React framework)
+  - [React Markdown](https://github.com/remarkjs/react-markdown) (Markdown rendering)
+  - [React Syntax Highlighter](https://github.com/react-syntax-highlighter/react-syntax-highlighter) (Syntax highlighting)
+  - [Rehype Raw](https://github.com/rehypejs/rehype-raw) (Raw HTML support in Markdown)
+
+- **Backend**:
+- Visit `https://github.com/codewithalihamza/NestJS-AI-Assistant` in your browser for backend code.
+---
+
+## Usage
+
+1. **Start the Backend**:
+- Ensure your backend API is running at the specified URL (e.g., `http://localhost:5000`).
+2. **Open the Application**:
+   Visit `http://localhost:3000` in your browser.
+
+3. **Send a Message**:
+   - Type a message in the input field and press `Enter` or click the `Send` button.
+   - The message will be sent to the backend, and the AI's response will be displayed.
+
+4. **View Conversation History**:
+   - The chat window displays the conversation history, including user messages and AI responses.
+
+---
+
+## Customization
+
+### Markdown Rendering
+To customize Markdown rendering, modify the `ReactMarkdown` component in `Chat.tsx`.
+
+---
 
 ## Getting Started
 
