@@ -6,7 +6,7 @@ import rehypeRaw from "rehype-raw";
 import { useChat } from "../hooks/useChat";
 
 export default function Chat() {
-    const { messages, input, setInput, handleSendMessage } = useChat();
+    const { messages, input, setInput, handleSendMessage, loading } = useChat();
 
     return (
         <div className="h-screen flex flex-col justify-between p-4 max-w-7xl mx-auto">
@@ -46,6 +46,12 @@ export default function Chat() {
                         </ReactMarkdown>
                     </div>
                 ))}
+                {/* Loading Indicator */}
+                {loading && (
+                    <div className="p-3 rounded-md max-w-[80%] bg-gray-200 text-black self-start">
+                        Loading...
+                    </div>
+                )}
             </div>
 
             {/* Input Field */}

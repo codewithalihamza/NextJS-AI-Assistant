@@ -1,20 +1,22 @@
-'use client'
+"use client";
+
 import { useState } from "react";
 import { sendMessage } from "../api/create-chat.api";
 import { Message } from "../interface/chat.interface";
 
-
 export const useChat = () => {
     const [messages, setMessages] = useState<Message[]>([]);
     const [input, setInput] = useState("");
+    const [loading, setLoading] = useState(false);
 
     const handleSendMessage = async () => {
-        if (!input.trim()) return;
+        if (!input.trim() || loading) return; // Prevent sending if already loading
 
         // Add user message to UI
         const userMessage: Message = { role: "user", content: input };
         setMessages((prev) => [...prev, userMessage]);
         setInput("");
+        setLoading(true);
 
         try {
             // Send request to backend
@@ -25,6 +27,8 @@ export const useChat = () => {
             setMessages((prev) => [...prev, aiMessage]);
         } catch (error) {
             console.error("Error sending message:", error);
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -33,5 +37,6 @@ export const useChat = () => {
         input,
         setInput,
         handleSendMessage,
+        loading,
     };
 };

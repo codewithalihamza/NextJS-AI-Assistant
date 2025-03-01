@@ -23,7 +23,6 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/react-syntax-highlighter": "^15.5.13",
-    "daisyui": "^5.0.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
