@@ -1,9 +1,9 @@
 export interface ChatCompletionMessage {
-    prompt: string;
-    sessionId?: string | null;
+  prompt: string;
+  sessionId?: string | null;
 }
 
 export interface Message {
-    role: "user" | "assistant";
-    content: string;
+  role: "user" | "assistant";
+  content: string;
 }
