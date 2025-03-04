@@ -51,8 +51,13 @@ To customize Markdown rendering, modify the `ReactMarkdown` component in `Chat.t
 ---
 
 ## Getting Started
+1. Clone the repository:
 
-First, run the development server:
+2. Install dependencies using NPM:
+   ```bash
+   npm install
+   ```
+3. run the development server:
 
 ```bash
 npm run dev
