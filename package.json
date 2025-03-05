@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write \"**/*.ts\" \"**/*.tsx\""
+    "format": "prettier --write \"**/*.ts\" \"**/*.tsx\"",
+    "prepare": "husky install"
   },
   "dependencies": {
     "next": "15.2.0",
@@ -24,9 +25,16 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/react-syntax-highlighter": "^15.5.13",
+    "@typescript-eslint/eslint-plugin": "^8.26.0",
+    "@typescript-eslint/parser": "^8.26.0",
+    "eslint": "^9.21.0",
+    "eslint-config-next": "^15.2.1",
+    "eslint-config-prettier": "^10.0.2",
+    "eslint-plugin-prettier": "^5.2.3",
     "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.6",
     "tailwindcss": "^4",
     "typescript": "^5",
-    "prettier-plugin-tailwindcss": "^0.6.6"
+    "husky": "^8.0.0"
   }
 }
