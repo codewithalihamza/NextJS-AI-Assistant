@@ -8,8 +8,7 @@ import { LoadingSkeleton } from "./LoadingSkeleton";
 
 export default function Chat() {
   const { messages, input, setInput, handleSendMessage, loading, streamingMessage } = useChat();
-  console.log("messages", messages)
-  console.log("streamingMessage", streamingMessage)
+
   return (
     <div className="mx-auto flex h-screen max-w-7xl flex-col justify-between p-4">
       {/* Chat Display */}
@@ -46,6 +45,20 @@ export default function Chat() {
             </ReactMarkdown>
           </div>
         ))}
+
+        {/* Loading Indicator - Show only when loading AND not streaming yet */}
+        {loading && !streamingMessage && (
+          <div className="w-full max-w-[80%] self-start">
+            <LoadingSkeleton
+              lines={7}
+              height="h-3"
+              width="w-full"
+              animate={true}
+              className="w-full"
+            />
+          </div>
+        )}
+
         {/* Streaming Message */}
         {streamingMessage && (
           <div className="max-w-[80%] self-start rounded-md bg-white p-3 text-black">
@@ -71,18 +84,6 @@ export default function Chat() {
             >
               {streamingMessage.content}
             </ReactMarkdown>
-          </div>
-        )}
-        {/* Loading Indicator */}
-        {loading && !streamingMessage && (
-          <div className="w-full max-w-[80%] self-start">
-            <LoadingSkeleton
-              lines={7}
-              height="h-3"
-              width="w-full"
-              animate={true}
-              className="w-full"
-            />
           </div>
         )}
       </div>

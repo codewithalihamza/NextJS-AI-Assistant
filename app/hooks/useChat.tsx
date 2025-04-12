@@ -19,15 +19,16 @@ export const useChat = () => {
     setLoading(true);
 
     try {
-      setStreamingMessage({ role: "assistant", content: "" });
-
+      // Show loading skeleton initially
       const aiResponse = await sendMessage(input);
-      const chars = aiResponse.split("");
-      const batchSize = 3; // Process 3 characters at a time for faster streaming
 
-      // Stream in batches
+      // Start streaming
+      setStreamingMessage({ role: "assistant", content: "" });
+      const chars = aiResponse.split("");
+      const batchSize = 3;
+
       for (let i = 0; i < chars.length; i += batchSize) {
-        await new Promise(resolve => setTimeout(resolve, 10)); // Faster timeout
+        await new Promise(resolve => setTimeout(resolve, 10));
         const batch = chars.slice(i, i + batchSize).join("");
         setStreamingMessage(prev =>
           prev ? { ...prev, content: prev.content + batch } : null
